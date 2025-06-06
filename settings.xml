@@ -1,0 +1,33 @@
+<settings>
+<servers>
+  <server>
+    <id>nw-nw-cicd</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+</servers>
+
+<profiles>
+  <profile>
+    <id>nw-nw-cicd</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>nw-nw-cicd</id>
+        <url>https://nw-120569621555.d.codeartifact.us-east-1.amazonaws.com/maven/nw-cicd/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+
+<mirrors>
+  <mirror>
+    <id>nw-nw-cicd</id>
+    <name>nw-nw-cicd</name>
+    <url>https://nw-120569621555.d.codeartifact.us-east-1.amazonaws.com/maven/nw-cicd/</url>
+    <mirrorOf>*</mirrorOf>
+  </mirror>
+</mirrors>
+</settings>
